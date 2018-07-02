@@ -8,7 +8,7 @@ Copyright 2018- Tatsuhiro Aoshima (hiro4bbh@gmail.com).
 Package goterm provides a simple terminal emulator.
 It supports full-width (zenkaku in Japanese) characters (other implementations support them partially or incorrectly).
 
-See golog's document on [GoDoc](https://godoc.org/github.com/hiro4bbh/go-term).
+See goterm's document on [GoDoc](https://godoc.org/github.com/hiro4bbh/go-term).
 You can test the examples:
 
 ```

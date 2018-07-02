@@ -13,7 +13,7 @@ func main() {
 	if goterm.IsTerminal(os.Stdout) {
 		promptStyle = promptStyle.Bold(true)
 	}
-	term, err := goterm.NewTerm(os.Stdin, promptStyle.Sprintf("> "), goterm.TermConfig{
+	term, err := goterm.New(os.Stdin, promptStyle.Sprintf("> "), &goterm.Config{
 		History: true,
 	})
 	if err != nil {

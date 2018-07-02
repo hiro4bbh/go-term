@@ -20,8 +20,8 @@ const (
 	keyLeft
 )
 
-// TermConfig is configure settings for a Term.
-type TermConfig struct {
+// Config is configure settings for a Term.
+type Config struct {
 	// History indicates whether the input history is enabled.
 	History bool
 }
@@ -32,15 +32,15 @@ type Term struct {
 	stateBefore, stateRaw *terminal.State
 	keybuf                []byte
 	prompt                string
-	config                TermConfig
+	config                *Config
 	input                 []rune
 	cursor                int
 	history               [][]rune
 	historyIdx            int
 }
 
-// NewTerm returns a new Term.
-func NewTerm(f *os.File, prompt string, config TermConfig) (*Term, error) {
+// New returns a new Term.
+func New(f *os.File, prompt string, config *Config) (*Term, error) {
 	stateBefore, err := terminal.MakeRaw(int(f.Fd()))
 	if err != nil {
 		return nil, err
